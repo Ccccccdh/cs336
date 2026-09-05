@@ -281,6 +281,11 @@ def generate_and_score(
                 fout.write(json.dumps(record, ensure_ascii=False) + "\n")
             fout.flush()
 
+    # 显式关闭 vLLM 引擎子进程，否则脚本主逻辑结束后进程会一直挂着不退出
+    shutdown = getattr(llm, "shutdown", None)
+    if callable(shutdown):
+        shutdown()
+
     return rows, total_time
 
 
