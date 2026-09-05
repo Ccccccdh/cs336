@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# IDE 个人配置
+.vscode/
+.idea/
+*.swp
+
+# 大模型权重（很大，绝不进 git）
+models/*.safetensors
+models/*.bin
+models/*.index.json
+models/*.gguf
+models/Qwen2.5-Math-1.5B/
+*.ckpt
+
+# 数据集原始文件与生成文件
+data/raw/
+data/*.jsonl
+!data/README.md
+
+# 评测结果明细
+results/*.jsonl
+results/**/*.jsonl
+wandb/
+runs/
+
+# 密钥
+.env
