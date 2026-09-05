@@ -150,12 +150,22 @@ def _row_to_items(row: dict[str, Any]) -> dict[str, Any] | None:
         return None
     answer = row.get("answer")
     solution = row.get("solution")
+
+    # 短答案优先（例如 gsm8k 的 "#### 8" 或本地 jsonl 里的 answer 字段）；
+    # 没有短答案时，MATH 的 solution 会提取 \boxed{} 内容作为候选。
+    candidates: list[str] = []
+    if answer is not None:
+        short_answer = _gsm8k_answer(str(answer))
+        if short_answer:
+            candidates.append(short_answer)
     if solution:
-        ground_truth = _math_ground_truths(str(solution))
-    elif answer is not None:
-        ground_truth = _gsm8k_answer(str(answer))
-    else:
+        for candidate in _math_ground_truths(str(solution)):
+            if candidate not in candidates:
+                candidates.append(candidate)
+    if not candidates:
         return None
+
+    ground_truth = candidates[0] if len(candidates) == 1 else candidates
     return {"question": str(question), "ground_truth": ground_truth}
 
 
@@ -168,9 +178,24 @@ def load_items(dataset: str, data_path: str | None, max_examples: int | None) ->
 
         rows = list(load_dataset("openai/gsm8k", "main", split="test"))
     elif dataset == "math":
-        from datasets import load_dataset
+        from datasets import concatenate_datasets, load_dataset
 
-        rows = list(load_dataset("EleutherAI/hendrycks_math", "all", split="test"))
+        # EleutherAI/hendrycks_math 没有 "all" 配置，只有按学科分的 7 个配置，
+        # 这里分别加载 test 再合并成完整的 MATH test 集。
+        math_configs = [
+            "algebra",
+            "counting_and_probability",
+            "geometry",
+            "intermediate_algebra",
+            "number_theory",
+            "prealgebra",
+            "precalculus",
+        ]
+        category_sets = []
+        for cfg in math_configs:
+            print(f"[data] 加载 MATH/{cfg} test ...")
+            category_sets.append(load_dataset("EleutherAI/hendrycks_math", cfg, split="test"))
+        rows = list(concatenate_datasets(category_sets)) if category_sets else []
     else:
         raise ValueError("--dataset jsonl 时必须提供 --data-path")
 
