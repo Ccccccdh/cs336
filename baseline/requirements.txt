@@ -1,0 +1,9 @@
+# 运行 zero-shot baseline 所需依赖（服务器应为 Linux + NVIDIA GPU）
+vllm>=0.6.3
+transformers>=4.44.0
+datasets>=2.20.0
+torch>=2.1.0
+sympy
+math-verify
+latex2sympy2_extended
+pylatexenc
