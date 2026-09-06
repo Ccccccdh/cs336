@@ -3,17 +3,17 @@
   "data_path": null,
   "model": "Qwen/Qwen2.5-Math-1.5B",
   "num_examples": 5000,
-  "answer_accuracy": 0.0268,
-  "format_rate": 0.1664,
-  "reward_mean": 0.0268,
-  "category_correct_1_1": 134,
-  "category_format_only_1_0": 698,
-  "category_unformatted_0_0": 4168,
+  "answer_accuracy": 0.0252,
+  "format_rate": 0.1582,
+  "reward_mean": 0.0252,
+  "category_correct_1_1": 126,
+  "category_format_only_1_0": 665,
+  "category_unformatted_0_0": 4209,
   "fast": true,
   "sampling": {
     "temperature": 1.0,
     "top_p": 1.0,
     "max_tokens": 1024
   },
-  "total_generation_seconds": 226.76
+  "total_generation_seconds": 224.06
 }
