@@ -37,3 +37,15 @@ runs/
 
 # 密钥
 .env
+
+# 模型 checkpoint
+models/sft_math/
+models/sft_*/
+*.ckpt
+
+# 训练日志
+logs/
+*.log
+nohup.out
+
+README.md

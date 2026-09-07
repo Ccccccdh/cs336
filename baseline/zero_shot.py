@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import os
 import time
 from pathlib import Path
 from typing import Any
@@ -281,7 +282,6 @@ def generate_and_score(
                 fout.write(json.dumps(record, ensure_ascii=False) + "\n")
             fout.flush()
 
-    # 显式关闭 vLLM 引擎子进程，否则脚本主逻辑结束后进程会一直挂着不退出
     shutdown = getattr(llm, "shutdown", None)
     if callable(shutdown):
         shutdown()
@@ -345,6 +345,9 @@ def main() -> None:
         args,
         {"total_generation_seconds": round(total_seconds, 2)},
     )
+
+    sys.stdout.flush()
+    os._exit(0)
 
 
 if __name__ == "__main__":

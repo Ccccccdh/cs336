@@ -1,0 +1,19 @@
+{
+  "dataset": "math",
+  "data_path": null,
+  "model": "models/sft_math",
+  "num_examples": 5000,
+  "answer_accuracy": 0.2454,
+  "format_rate": 0.8982,
+  "reward_mean": 0.2454,
+  "category_correct_1_1": 1227,
+  "category_format_only_1_0": 3264,
+  "category_unformatted_0_0": 509,
+  "fast": true,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_tokens": 1024
+  },
+  "total_generation_seconds": 203.22
+}
