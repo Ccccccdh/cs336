@@ -1,0 +1,19 @@
+{
+  "dataset": "math",
+  "data_path": null,
+  "model": "models/rsft_round2_full",
+  "num_examples": 5000,
+  "answer_accuracy": 0.3204,
+  "format_rate": 0.9796,
+  "reward_mean": 0.3204,
+  "category_correct_1_1": 1602,
+  "category_format_only_1_0": 3296,
+  "category_unformatted_0_0": 102,
+  "fast": true,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_tokens": 1024
+  },
+  "total_generation_seconds": 158.2
+}

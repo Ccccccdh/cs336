@@ -17,6 +17,7 @@ env/
 *.swp
 
 # 大模型权重（很大，绝不进 git）
+models/
 models/*.safetensors
 models/*.bin
 models/*.index.json
