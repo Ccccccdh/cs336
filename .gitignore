@@ -50,3 +50,15 @@ logs/
 nohup.out
 
 README.md
+
+data/dpo_ref_cache_full.json
+data/dpo_ref_cache_pilot.json
+results/dpo_beta03/
+results/dpo_full/
+results/dpo_pilot_v2/
+results/grpo_fast/
+results/grpo_fast_step25/
+results/grpo_fast_step50/
+results/grpo_fast_step60/
+
+data/grpo_fast_rollouts

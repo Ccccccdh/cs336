@@ -1,0 +1,19 @@
+{
+  "dataset": "math",
+  "data_path": null,
+  "model": "models/grpo_fast",
+  "num_examples": 5000,
+  "answer_accuracy": 0.599,
+  "format_rate": 0.9438,
+  "reward_mean": 0.599,
+  "category_correct_1_1": 2995,
+  "category_format_only_1_0": 1724,
+  "category_unformatted_0_0": 281,
+  "fast": true,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_tokens": 1024
+  },
+  "total_generation_seconds": 204.46
+}
