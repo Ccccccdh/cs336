@@ -1,0 +1,19 @@
+{
+  "dataset": "math",
+  "data_path": null,
+  "model": "models/self_play_exp2",
+  "num_examples": 5000,
+  "answer_accuracy": 0.6128,
+  "format_rate": 0.952,
+  "reward_mean": 0.6128,
+  "category_correct_1_1": 3064,
+  "category_format_only_1_0": 1696,
+  "category_unformatted_0_0": 240,
+  "fast": true,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "max_tokens": 1024
+  },
+  "total_generation_seconds": 208.49
+}

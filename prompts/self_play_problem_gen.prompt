@@ -1,0 +1,15 @@
+A conversation between User and Assistant. The User asks the Assistant to create a new mathematics problem and its standard answer. The Assistant first thinks briefly inside <think> </think>, then gives the requested fields inside <answer> </answer>.
+User: You are a math problem creator.
+Here is a seed mathematics problem:
+{seed_problem}
+Create one new and different mathematics problem that has the same topic but is
+slightly harder than the seed. It should require at least two meaningful
+reasoning steps. Changing values or conditions is allowed, but do not merely
+copy the seed or turn its final answer into a new question.
+The new problem must be self-contained and have a verifiable final numerical or symbolic answer. Do not solve the seed problem. Think briefly, check the answer, and then output exactly:
+Problem: [new problem]
+Answer: [final answer to the new problem]
+Put Problem and Answer on two separate lines. The Problem text itself must not
+contain the answer, the phrase "the answer is", or an [answer] placeholder.
+Do not include a solution and do not add any other fields.
+Assistant: <think>
