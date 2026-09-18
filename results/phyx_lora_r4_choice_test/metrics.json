@@ -1,0 +1,55 @@
+{
+  "dataset": "Cloudriver/PhyX custom category-stratified held-out split",
+  "data_path": "data/phyx_lora/test.jsonl",
+  "model": "models/phyx_lora_r4_choice_merged",
+  "eval_mode": "likelihood",
+  "prompt_mode": "answer_only",
+  "num_examples": 300,
+  "answer_correct": 114,
+  "answer_accuracy": 0.38,
+  "macro_category_accuracy": 0.380227,
+  "prediction_distribution": {
+    "A": 99,
+    "B": 21,
+    "C": 38,
+    "D": 142
+  },
+  "per_category": {
+    "Electromagnetism": {
+      "examples": 55,
+      "correct": 16,
+      "answer_accuracy": 0.290909
+    },
+    "Mechanics": {
+      "examples": 55,
+      "correct": 19,
+      "answer_accuracy": 0.345455
+    },
+    "Modern Physics": {
+      "examples": 40,
+      "correct": 13,
+      "answer_accuracy": 0.325
+    },
+    "Optics": {
+      "examples": 50,
+      "correct": 16,
+      "answer_accuracy": 0.32
+    },
+    "Thermodynamics": {
+      "examples": 50,
+      "correct": 28,
+      "answer_accuracy": 0.56
+    },
+    "Waves/Acoustics": {
+      "examples": 50,
+      "correct": 22,
+      "answer_accuracy": 0.44
+    }
+  },
+  "total_evaluation_seconds": 13.97,
+  "scoring": {
+    "method": "conditional_log_likelihood_over_A_B_C_D",
+    "score_batch_size": 4,
+    "max_seq_len": 4096
+  }
+}

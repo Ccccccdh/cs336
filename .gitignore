@@ -63,4 +63,5 @@ results/grpo_fast_step60/
 results/self_play_exp2_step3_seed7070
 
 data/grpo_fast_rollouts
+data/phyx_lora
 data/self_play_exp2
