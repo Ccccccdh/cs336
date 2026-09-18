@@ -49,8 +49,6 @@ logs/
 *.log
 nohup.out
 
-README.md
-
 data/dpo_ref_cache_full.json
 data/dpo_ref_cache_pilot.json
 results/dpo_beta03/
